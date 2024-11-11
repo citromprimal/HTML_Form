@@ -1,2 +1,2 @@
 # HTML_Form
-The functionality of the code is to provide a reservation form for a trip.
+The functionality of the code is to provide a reservation form for a trip. The functionality of the code is to provide a reservation form for a trip. The form collects various user details and travel information. The form includes validation for required fields and displays error messages for invalid inputs. It also features character counters for input fields and a modal for confirming the entered information before submission. The form is submitted to a specified URL using the POST method.
