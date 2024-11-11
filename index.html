@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervačný Formulár Zájazdu</title>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data" novalidate>
+    <input type="hidden" name="apikey" value="">
+    <input type="hidden" name="from" value="">
+    <input type="hidden" name="sender" value="">
+    <input type="hidden" name="to" value="">
+    <input type="hidden" name="subject" value="">
+    <input type="hidden" name="redirectOk"
+           value="https://webte1.fei.stuba.sk/~xbohak/habakukkzadania/assignmenttwo/success.html">
+    <input type="hidden" name="redirectFalse"
+           value="https://webte1.fei.stuba.sk/~xbohak/habakukkzadania/assignmenttwo/fail.html">
+
+    <header>
+        <h1>Rezervačný Formulár Zájazdu</h1>
+    </header>
+    <div class="container">
+        <section class="basic-info">
+            <h2>Základné informácie</h2>
+            <div class="row">
+                <div class="column">
+                    <label for="firstName">Meno<span class="required">*</span></label>
+                    <div class="input-container">
+                        <span class="input-counter" id="nameCount">0 / 20</span>
+                        <input type="text" id="firstName" name="Meno" maxlength="20" required placeholder="napr. Janko">
+                        <small id="nameError" class="error-message">Meno musí obsahovať iba písmená.</small>
+                        <small id="firstNameNotFilled" class="error-message" >Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+                <div class="column">
+                    <label for="lastName">Priezvisko<span class="required">*</span></label>
+                    <div class="input-container">
+                        <span class="input-counter" id="surnameCount">0 / 20</span>
+                        <input type="text" id="lastName" name="Priezvisko" maxlength="20" required placeholder="napr. Mrkvička">
+                        <small id="surnameError" class="error-message">Priezvisko musí obsahovať iba písmená.</small>
+                        <small id="lastNameNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <label for="phoneNumber">Telefónne číslo<span class="required">*</span></label>
+                    <div class="input-container">
+                        <span class="input-counter" id="phoneCount">0 / 15</span>
+                        <input type="tel" id="phoneNumber" name="Telefónne číslo" maxlength="15" required placeholder="napr. +421912345678">
+                        <small id="phoneError" class="error-message">Zadajte telefónne číslo v medzinárodnom formáte.</small>
+                        <small id="phoneNumberNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+                <div class="column">
+                    <label for="email">Email<span class="required">*</span></label>
+                    <div class="input-container">
+                        <span class="input-counter" id="emailCount">0 / 50</span>
+                        <input type="email" id="email" name="Email" maxlength="50" required placeholder="napr. my.email25@gmail.com">
+                        <small id="emailError" class="error-message">Zadajte platnú emailovú adresu.</small>
+                        <small id="emailNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <label for="dateOfbirth">Dátum narodenia<span class="required">*</span></label>
+                    <div class="input-container">
+                        <input type="date" id="dateOfbirth" name="Dátum narodenia" required>
+                        <small id="dobError" class="error-message">Zadajte platý dátum narodenia.</small>
+                        <small id="dateOfbirthNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                        <small id="dobNoMatch" class="error-message">Dátum narodenia musí zodpovedať veku.</small>
+                    </div>
+                </div>
+                <div class="column">
+                    <label for="age">Vek<span class="required">*</span></label>
+                    <div class="input-container">
+                        <span class="input-counter" id="ageCount">0 / 3</span>
+                        <input type="text" id="age" name="Vek" maxlength="3" required>
+                        <small id="ageError" class="error-message">Vek musí byť validný.</small>
+                        <small id="ageNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                        <small id="ageNoMatch" class="error-message">Vek sa musí zodpovedať dátumom narodenia.</small>
+                        <small id="ageTooHigh" class="error-message">Vek musí byť od 0 do 120 rokov.</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <label>
+                Pohlavie
+            </label>
+            <br>
+            <div class="radio-class">
+                <label>
+                    Muž
+                    <input type="radio" name="Pohlavie" value="Muž">
+                </label>
+                <label>
+                    Žena
+                    <input type="radio" name="Pohlavie" value="Žena">
+                </label>
+                <label>
+                    Iné
+                    <input type="radio" name="Pohlavie" value="Iné">
+                </label>
+            </div>
+            <br>
+            <h2>Fakturačné údaje</h2>
+            <div class="row">
+                <div class="column">
+                    <label for="country">Štát<span class="required">*</span></label>
+                    <div class="input-container">
+                        <span class="input-counter" id="countryCount">0 / 20</span>
+                        <input type="text" id="country" name="Fakturačné údaje - Štát" maxlength="20" required placeholder="napr. Slovensko">
+                        <small id="countryError" class="error-message">Štát musí obsahovať iba písmená.</small>
+                        <small id="countryNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+                <div class="column">
+                    <label for="county">Kraj</label>
+                    <div class="input-container">
+                        <span class="input-counter" id="countyCount">0 / 20</span>
+                        <input type="text" id="county" name="Fakturačné údaje - Kraj" maxlength="20" placeholder="napr. Nitriansky">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <label for="city">Mesto<span class="required">*</span></label>
+                    <div class="input-container">
+                        <span class="input-counter" id="cityCount">0 / 20</span>
+                        <input type="text" id="city" name="Fakturačné údaje - Mesto" maxlength="20" required placeholder="napr. Levice">
+                        <small id="cityError" class="error-message">Mesto musí obsahovať iba písmená.</small>
+                        <small id="cityNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+                <div class="column">
+                    <label for="street">Ulica a č.<span class="required">*</span></label>
+                    <div class="input-container">
+                        <span class="input-counter" id="streetCount">0 / 40</span>
+                        <input type="text" id="street" name="Fakturačné údaje - Ulica a č." maxlength="40" required placeholder="napr. Ľudovíta Štúra 487">
+                        <small id="streetNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <div class="toggleCheckbox">
+                        Dodacia adresa je rovnaká ako fakturačná
+                        <input type="checkbox" id="toggleCheckbox" checked>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="additionalContent" style="display: none;">
+                <h2>Dodacie údaje</h2>
+                <div class="row">
+                    <div class="column">
+                        <div class="input-container">
+                            <span class="input-counter-add" id="country2Count">0 / 20</span>
+                            <label for="country2">Štát</label>
+                            <input type="text" id="country2" name="Dodacie údaje - Štát" maxlength="20" placeholder="napr. Slovensko">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="input-container">
+                            <label for="county2">Kraj</label>
+                            <span class="input-counter-add" id="county2Count">0 / 20</span>
+                            <input type="text" id="county2" name="Dodacie údaje - Kraj" maxlength="20" placeholder="napr. Nitriansky">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="column">
+                        <div class="input-container">
+                            <label for="city2">Mesto</label>
+                            <span class="input-counter-add" id="city2Count">0 / 20</span>
+                            <input type="text" id="city2" name="Dodacie údaje - Mesto" maxlength="20" placeholder="napr. Levice">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="input-container">
+                            <label for="street2">Ulica a č.</label>
+                            <span class="input-counter-add" id="street2Count">0 / 40</span>
+                            <input type="text" id="street2" name="Dodacie údaje - Ulica a č." maxlength="40" placeholder="napr. Ľudovíta Štúra 487">
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+        </section>
+        <section class="travel-booking">
+            <h2>Cestovné informácie</h2>
+            <div class="row">
+                <div class="column">
+                    <div class="input-container">
+                        <label for="travelType">Ako cestujete?<span class="required">*</span></label>
+                        <select id="travelType" name="Cesta s" required>
+                            <option value="" disabled selected>--Vyberte ako cestujete--</option>
+                            <option value="letecky">Letecky</option>
+                            <option value="autobus">Autobus</option>
+                        </select>
+                        <small id="travelTypeNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="input-container">
+                        <label for="travelClass">Vyberte triedu<span class="required">*</span></label>
+                        <select id="travelClass" name="Cestovná trieda" required>
+                            <option value="" disabled selected>--Vyberte cestovnú triedu--</option>
+                        </select>
+                        <small id="travelClassNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="input-container">
+                        <label for="destination">Vyberte destináciu<span class="required">*</span></label>
+                        <select id="destination" name="Destinácia" required>
+                            <option value="" disabled selected>--Vyberte destináciu--</option>
+                        </select>
+                        <small id="destinationNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <label for="departure">Odchod<span class="required">*</span></label>
+                    <div class="input-container">
+                        <input type="date" id="departure" name="Odchod" required>
+                        <small id="depError" class="error-message">Dátum odchodu musí byť v budúcnosti.</small>
+                        <small id="departureNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+                <div class="column">
+                    <label for="arrival">Príchod<span class="required">*</span></label>
+                    <div class="input-container">
+                        <input type="date" id="arrival" name="Príchod" required>
+                        <small id="arrError" class="error-message">Dátum príchodu nemôže byť skoršie ako dátum odchodu.</small>
+                        <small id="arrivalNotFilled" class="error-message">Toto pole je potrebné vyplniť.</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <div class="travel-reason">
+                        Z akého dôvodu cestujete?
+                        <br>
+                        <div class="travel-checkbox">
+                            <label>
+                                Dovolenka
+                                <input type="checkbox" name="Dôvod" value="Dovolenka">
+                            </label>
+                            <br>
+                            <label>
+                                Firemná cesta
+                                <input type="checkbox" name="Dôvod" value="Firemná cesta">
+                            </label>
+                            <br>
+                            <label>
+                                Iné
+                                <input type="checkbox" id="otherCheckbox" name="Dôvod" value="Iné">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="column" id="otherTextContainer">
+                    <label for="otherText">Prosím zadajte svoju možnosť:</label>
+                    <div class="input-container">
+                        <span class="input-counter" id="otherTextCount">0 / 20</span>
+                        <input type="text" id="otherText" name="Iný dôvod" maxlength="20">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <label for="moreinfo">Ďalšie informácie</label>
+                    <div class="input-container">
+                        <span class="input-counter-moreinfo" id="moreInfoCount">0 / 200</span>
+                        <textarea class="moreinfo" id="moreinfo" name="Ďalšie informácie" maxlength="200" placeholder="Máte ďalšie otázky alebo pripomienky? Napíšte ich sem…"></textarea>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <label>
+                Ako platíte?
+                <span class="required">*</span>
+            </label>
+            <br>
+            <div class="radio-class">
+                <label>
+                    Karta
+                    <input type="radio" name="Spôsob platby" value="Karta" required>
+                </label>
+                <label>
+                    Paypal
+                    <input type="radio" name="Spôsob platby" value="Paypal">
+                </label>
+                <label>
+                    Hotovosť
+                    <input type="radio" name="Spôsob platby" value="Hotovosť">
+                </label>
+            </div>
+            <br>
+            <button type="submit" onclick="validateForm()">Pokračovať</button>
+            <span id="finalPrice" style="font-weight: bold; margin-left: 0.6rem;"></span>
+        </section>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p><span class="required">*</span> <i>označené polia musia byť vyplnené</i></p>
+        </div>
+        <div class="column-icon">
+            <div id="info-icon">
+                <span id="info-text" style="display: none;">Created by Dávid Bohák</span>
+                <i class="info-symbol">i</i>
+            </div>
+        </div>
+    </div>
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2>Potvrďte svoje informácie</h2>
+            <button id="closeModalButton">&times;</button>
+            <div id="modalDetails"></div>
+            <button id="confirmButton">Potvrdiť a odoslať</button>
+        </div>
+    </div>
+</form>
+<script src="index.js"></script>
+</body>
+</html>
